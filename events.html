@@ -1,0 +1,34 @@
+---
+layout: default
+title: Ohio Progressive Asian Women's Leadership
+---
+
+<div class="events-page-wrapper">
+  <div class="events-container">
+    <h1>All Events</h1>
+{% for post in site.categories.events %}
+      <a href="{{ post.url }}">
+        <div class="events-list">{{ post.title }} &mdash; {{ post.post-date }}<br>
+          <div class="post-break">
+            <HR>
+          </div>
+          <span class="post-short-desc">{{ post.short-desc }}
+        </div>
+      </a>
+{% endfor %}
+  </div>
+
+  <div class="news-page-container">
+    <h1>News</h1>
+{% for post in site.categories.news %}
+    <a href="{{ post.url }}">
+      <div class="news-list">{{ post.title }} &mdash; {{ post.post-date }}<br>
+        <div class="post-break">
+          <HR>
+        </div>
+        <span class="post-short-desc">{{ post.short-desc }}
+      </div>
+    </a>
+  {% endfor %}
+  </div>
+</div>

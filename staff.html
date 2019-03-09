@@ -1,0 +1,19 @@
+---
+---
+<h1>Leadership</h1>
+<div class="staff-container">
+  {% for author in site.authors %}
+  <a href="{{ author.url }}">
+    <div class="staff-list">
+      <div class="staff-image-container">
+        <img src="/assets/images/staff/{{ author.image }}" />
+      </div>
+      <h2>{{ author.name }}</h2>
+      <HR>
+      <p class="staff-content">{{ author.content | markdownify }}</p>
+    </div>
+  </a>
+    {% endfor %}
+</div>
+
+</ul>

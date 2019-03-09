@@ -1,0 +1,93 @@
+---
+title: Ohio Progressive Asian Women's Leadership
+---
+
+<!-- HERO Slideshow -->
+<div class="hero-slideshow-container">
+  <div class="myHeroSlides fade">
+    <img src="/assets/images/hero-image-1.jpg" width="100%" height="750" />
+    <div class="carousel-container">
+      <h1 class="white">Join us!</h1>
+      <p class="white">We are always looking for new and exciting ways to engage our community!</p>
+      <a href="/member"><div id="member-button" class="hero-button">Become a Member</div></a>
+    </div>
+  </div>
+
+  <div class="myHeroSlides fade">
+    <img src="/assets/images/hero-image-1.jpg" width="100%" height="750" />
+    <div class="carousel-container">
+      <h1 class="white">About us</h1>
+      <p class="white">We are a grassroots community organization committed to supporting, empowering, and raising visibility of progressive female and nonbinary AAPIs in Ohio.</p>
+      <a href="/about"><div class="hero-button" id="about-button">Learn More</div></a>
+    </div>
+  </div>
+
+  <div class="myHeroSlides fade">
+    <img src="/assets/images/hero-image-1.jpg" width="100%" height="750" />
+    <div class="carousel-container">
+      <h1 class="white">Engage</h1>
+      <p class="white">We have many plans to empower our community and need your support!</p>
+      <a href="/about"><div class="hero-button" id="donate-button">Donate Today</div></a>
+    </div>
+  </div>
+
+  <div class="dot-container">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+var i;
+var slides = document.getElementsByClassName("myHeroSlides");
+var dots = document.getElementsByClassName("dot");
+if (n > slides.length) {slideIndex = 1}
+if (n < 1) {slideIndex = slides.length}
+for (i = 0; i < slides.length; i++) {
+  slides[i].style.display = "none";
+}
+for (i = 0; i < dots.length; i++) {
+  dots[i].className = dots[i].className.replace(" active", "");
+}
+slides[slideIndex-1].style.display = "block";
+dots[slideIndex-1].className += " active";
+}
+</script>
+
+<div class="middle-container">
+  <div class="fb-container">
+    <div id="fb-root">
+      <h1 class="white">Recent Posts</h1>
+      <iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2FteamOPAWL&width=600&colorscheme=light&show_faces=true&border_color&stream=true&header=true&height=435" scrolling="yes" style="width: 500px; height: 435px;" allowtransparency="true" frameborder="0"></iframe>
+    </div>
+  </div>
+  <div class="events-container">
+    <h1 class="white">Upcoming Events</h1>
+    {% assign events = site.categories.events %}
+    {% for post in events limit:2 %}
+      <a href="{{ post.url }}">
+        <div class="events-list">{{ post.title }} &mdash; {{ post.post-date }}<br>
+          <div class="post-break">
+            <HR>
+          </div>
+          <span class="post-short-desc">{{ post.short-desc }}</div>
+      </a>
+    {% endfor %}
+    <div class="events-button-container">
+      <a href="/events"><div id="events-button">See all events</div></a>
+    </div>
+  </div>
+</div>
