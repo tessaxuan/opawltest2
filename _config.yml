@@ -16,6 +16,8 @@
 
 
 # Build settings
+baseurl: /opawltest2
+
 collections:
   authors:
     output: true
