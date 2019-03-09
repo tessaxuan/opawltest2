@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  </head>
+  <body>
+
+{% include navigation.html %}
+  <h1>{{ page.name }}</h1>
+  <div class="author-container">
+    <span class="author-content">{{ content }}</span>
+  </div>
+    <h2>News posted by {{ page.name }}</h2>
+  <div class="post-container">
+
+{% assign news = site.categories.news | where: 'author', page.short_name %}
+{% for post in news %}
+      <a href="{{ post.url }}">
+        <div class="post-list">{{ post.title }} &mdash; {{ post.post-date }}<br>
+          <div class="post-break">
+            <HR>
+            </div>
+            <span class="post-short-desc">{{ post.short-desc }}</span>
+          </div>
+        </a>
+{% if news.length == 0 %}
+    <div class="hooray">Hooray!</div>
+{% endif %}
+{% endfor %}
+    </div>
+    {% include footer.html %}
+</body>
+</html>
