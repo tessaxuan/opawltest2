@@ -541,12 +541,6 @@ background-color: rgb(129,139,201);
   transition: all 0.6s;
 }
 
-.staff-list img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 50%;
-}
-
 .staff-list h2 {
   color: rgb(97,33,118);
   margin: 0;
@@ -561,12 +555,27 @@ background-color: rgb(129,139,201);
   color: black;
 }
 
-.staff-image-container {
+.staff-list img {
+  max-height: 12vw;
+  border-radius: 50%;
+}
+
+.staff-image-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 50%;
+}
+
+.staff-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+  background-color: blue;
 }
 
 .staff-description {
