@@ -544,6 +544,7 @@ background-color: rgb(129,139,201);
 .staff-list img {
   max-width: 90%;
   max-height: 90%;
+  border-radius: 50%;
 }
 
 .staff-list h2 {
