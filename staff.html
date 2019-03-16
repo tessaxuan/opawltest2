@@ -3,10 +3,12 @@
 <h1>Leadership</h1>
 <div class="staff-container">
   {% for author in site.authors %}
-  <a href="{{ author.url }}">
+  <a href="{{ site.baseurl }}{{ author.url }}">
     <div class="staff-list">
-      <div class="staff-image-container">
-        <img src="{{ site.baseurl }}/assets/images/staff/{{ author.image }}" />
+      <div class="staff-image-wrapper">
+        <div class="staff-image-container">
+          <img src="{{ site.baseurl }}/assets/images/staff/{{ author.image }}" />
+        </div>
       </div>
       <h2>{{ author.name }}</h2>
       <HR>
