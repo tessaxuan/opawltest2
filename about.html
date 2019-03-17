@@ -14,7 +14,7 @@ permalink: /about
 
   {% for item in site.data.slideshow %}
   <div class="mySlides fade">
-    <img src="{{ item.link }}" class="slide-images" alt="{{ item.description }}" />
+    <img src="{{ site.baseurl }}{{ item.link }}" class="slide-images" alt="{{ item.description }}" />
   </div>
   {% endfor %}
 

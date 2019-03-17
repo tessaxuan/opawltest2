@@ -12,7 +12,12 @@
       </div>
       <h2>{{ author.name }}</h2>
       <HR>
-      <p class="staff-content">{{ author.content | markdownify }}</p>
+      <div class="staff-content-container">
+        <p class="staff-content">{{ author.content | markdownify }}</p>
+      </div>
+      <div class="staff-read-button">
+        Read more about {{ author.name }}
+      </div>
     </div>
   </a>
     {% endfor %}
