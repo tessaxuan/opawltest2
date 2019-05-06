@@ -5,28 +5,25 @@ title: Ohio Progressive Asian Women's Leadership
 <!-- HERO Slideshow -->
 <div class="hero-slideshow-container">
   <div class="myHeroSlides fade">
-    <img src="{{ site.baseurl }}/assets/images/hero-image-1.jpg" width="100%" height="750" />
     <div class="carousel-container">
-      <h1 class="white">Join us!</h1>
-      <p class="white">We are always looking for new and exciting ways to engage our community!</p>
+      <h1 class="purple">Join us!</h1>
+      <p class="purple">We are always looking for new and exciting ways to engage our community!</p>
       <a href="{{ site.baseurl }}/member"><div id="member-button" class="hero-button">Become a Member</div></a>
     </div>
   </div>
 
   <div class="myHeroSlides fade">
-    <img src="{{ site.baseurl }}/assets/images/hero-image-1.jpg" width="100%" height="750" />
     <div class="carousel-container">
-      <h1 class="white">About us</h1>
-      <p class="white">We are a grassroots community organization committed to supporting, empowering, and raising visibility of progressive female and nonbinary AAPIs in Ohio.</p>
+      <h1 class="purple">About us</h1>
+      <p class="purple">We are a grassroots community organization committed to supporting, empowering, and raising visibility of progressive female and nonbinary AAPIs in Ohio.</p>
       <a href="{{ site.baseurl }}/about"><div class="hero-button" id="about-button">Learn More</div></a>
     </div>
   </div>
 
   <div class="myHeroSlides fade">
-    <img src="{{ site.baseurl }}/assets/images/hero-image-1.jpg" width="100%" height="750" />
     <div class="carousel-container">
-      <h1 class="white">Engage</h1>
-      <p class="white">We have many plans to empower our community and need your support!</p>
+      <h1 class="purple">Engage</h1>
+      <p class="purple">We have many plans to empower our community and need your support!</p>
       <a href="{{ site.baseurl }}/about"><div class="hero-button" id="donate-button">Donate Today</div></a>
     </div>
   </div>
@@ -67,27 +64,42 @@ dots[slideIndex-1].className += " active";
 }
 </script>
 
-<div class="middle-container">
-  <div class="fb-container">
-    <div id="fb-root">
-      <h1 class="white">Recent Posts</h1>
-      <iframe src="https://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2FteamOPAWL&width=600&colorscheme=light&show_faces=true&border_color&stream=true&header=true&height=435" scrolling="yes" style="width: 500px; height: 435px;" allowtransparency="true" frameborder="0"></iframe>
-    </div>
-  </div>
-  <div class="events-container">
-    <h1 class="white">Upcoming Events</h1>
-    {% assign events = site.categories.events %}
-    {% for post in events limit:2 %}
+<div class="events-container-home">
+  <h1 class="white">Upcoming Events</h1>
+
+  {% assign todays_date = 'now' | date_to_long_string: "ordinal", "US" %}
+  {% for post in site.categories.events %}
+    {% assign eventDate = post.eventDate | date_to_long_string: "ordinal", "US" %}
+    {% if eventDate >= todays_date %}
       <a href="{{ post.url }}">
-        <div class="events-list">{{ post.title }} &mdash; {{ post.post-date }}<br>
-          <div class="post-break">
-            <HR>
-          </div>
-          <span class="post-short-desc">{{ post.short-desc }}</div>
+        <div class="events-list-home purple">{{ post.title }} &mdash; {{ post.event-date | date_to_long_string: "ordinal", "US" }}<br>
+          <div class="post-break"><HR></div>
+          <span class="post-short-desc">{{ post.short-desc }}
+        </div>
       </a>
-    {% endfor %}
-    <div class="events-button-container">
-      <a href="{{ site.baseurl }}/events"><div id="events-button">See all events</div></a>
-    </div>
+    {% endif %}
+  {% endfor %}
+
+  {% for post in site.categories.events %}
+    {% assign eventDate = post.eventDate | date_to_long_string: "ordinal", "US" %}
+    {% if todays_date > eventDate %}
+    <p>There are no more upcoming events</p>
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+
+
+
+  <div class="events-button-container">
+    <a href="{{ site.baseurl }}/events">
+      <div id="events-button">See all events</div></a>
+  </div>
+</div>
+
+<div class="fb-container">
+  <div id="fb-root">
+    <h1 class="white">Recent Posts</h1>
+    <iframe src="https://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2FteamOPAWL&width=600&colorscheme=light&show_faces=true&border_color&stream=true&header=true&height=435" scrolling="yes" style="width: 500px; height: 435px;" allowtransparency="true" frameborder="0"></iframe>
   </div>
 </div>
