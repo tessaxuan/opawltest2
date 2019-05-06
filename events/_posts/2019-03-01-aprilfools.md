@@ -2,7 +2,8 @@
 layout: posts
 title: April Fools'O'Clock
 short-desc: Every year we play a prank on Zeyd and TP his car. Shhh! He doesn't know it's us yet
-post-date: April 1, 2019
+date: 2019-04-01
+event-date: 2019-04-01
 location: Tessa's house
 author: tessa
 ---

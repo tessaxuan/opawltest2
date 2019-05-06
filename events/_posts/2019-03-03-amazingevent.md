@@ -2,7 +2,8 @@
 layout: posts
 title: March Movie Night
 short-desc: You are all invited to my house for a movie night!
-post-date: March 19, 2019
+date: 2019-03-19
+event-date: 2019-03-19
 location: My house
 author: tessa
 ---
