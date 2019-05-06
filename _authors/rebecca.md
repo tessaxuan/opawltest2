@@ -5,6 +5,7 @@ name: Rebecca Nelson
 image: rebecca-nelson.jpg
 ---
 
+<div class="staffindimage"><img src="{{ site.baseurl }}//assets/images/staff/{{ page.image }}" /></div>
 Rebecca Nelson serves as the Administrator for Columbus Public Health's  Neighborhood Health Division, which includes the sections of Health Equity, Chronic Disease Prevention, and Neighborhood Health Social Services.  
 
 Prior to this role, she served in numerous positions at The Ohio State University, including Assistant Vice President for Student Life, Director of the Multicultural Center, Program Manager for Community Development at the Wexner Medical Center, and Assistant Director at the Office of Diversity and Inclusion.
