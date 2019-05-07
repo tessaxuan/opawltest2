@@ -7,33 +7,39 @@ title: Ohio Progressive Asian Women's Leadership
 
 <div class="events-page-wrapper">
 
-
-
   <div class="events-container">
     <h1>All Events</h1>
-{% for post in site.categories.events %}
-      <a href="{{ site.baseurl }}{{ post.url }}">
-        <div class="events-list">{{ post.title }} &mdash; {{ post.date | date_to_long_string: "ordinal", "US" }} &mdash; {{ site.time | date_to_long_string: "ordinal", "US" }}<br>
+
+{% assign sorted_events = site.events | sort:"date" %}
+{% for collection in sorted_events reversed %}
+
+      <a href="{{ site.baseurl }}{{ collection.url }}">
+        <div class="events-list">{{ collection.title }} &mdash; {{ collection.date | date_to_long_string: "ordinal", "US" }}<br>
           <div class="post-break">
             <HR>
           </div>
-          <span class="post-short-desc">{{ post.short-desc }}
+          <span class="post-short-desc">{{ collection.short-desc }}
         </div>
       </a>
+
 {% endfor %}
   </div>
 
   <div class="news-page-container">
     <h1>News</h1>
-{% for post in site.categories.news %}
-    <a href="{{ site.baseurl }}{{ post.url }}">
-      <div class="news-list">{{ post.title }} &mdash; {{ post.event-date }}<br>
+
+{% assign sorted_events = site.news | sort:"date" %}
+{% for collection in sorted_events reversed %}
+
+    <a href="{{ site.baseurl }}{{ collection.url }}">
+      <div class="news-list">{{ collection.title }} &mdash; {{ collection.date | date_to_long_string: "ordinal", "US"}}<br>
         <div class="post-break">
           <HR>
         </div>
-        <span class="post-short-desc">{{ post.short-desc }}
+        <span class="post-short-desc">{{ collection.short-desc }}
       </div>
     </a>
+
   {% endfor %}
   </div>
 </div>

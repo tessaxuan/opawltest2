@@ -19,18 +19,32 @@
 collections:
   authors:
     output: true
+  events:
+    output: true
+  news:
+    output: true
 
 defaults:
   - scope:
       path: ""
       type: "authors"
     values:
-      layout: "author"
+      layout: "default"
   - scope:
       path: ""
       type: "posts"
     values:
-      layout: "post"
+      layout: "default"
+  - scope:
+      path: ""
+      type: "events"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "news"
+    values:
+      layout: "default"
   - scope:
       path: ""
     values:

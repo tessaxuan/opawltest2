@@ -67,26 +67,27 @@ dots[slideIndex-1].className += " active";
 <div class="events-container-home">
   <h1 class="white">Upcoming Events</h1>
 
-  {% assign todays_date = 'now' | date_to_long_string: "ordinal", "US" %}
-  {% for post in site.categories.events %}
-    {% assign eventDate = post.eventDate | date_to_long_string: "ordinal", "US" %}
-    {% if eventDate >= todays_date %}
-      <a href="{{ post.url }}">
-        <div class="events-list-home purple">{{ post.title }} &mdash; {{ post.event-date | date_to_long_string: "ordinal", "US" }}<br>
+{% capture now %}{{ 'now' | date: "%Y-%m-%d" }}{% endcapture %}
+{% for collection in site.events reversed %}
+  {% capture date %}{{ collection.date | date: "%Y-%m-%d" }}{% endcapture %}
+  {% if date >= now %}
+    {% assign toggle = true %}
+
+      <a href="{{ collection.url }}">
+        <div class="events-list-home purple">{{ collection.title }} &mdash; {{ collection.date | date_to_long_string: "ordinal", "US" }}<br>
           <div class="post-break"><HR></div>
-          <span class="post-short-desc">{{ post.short-desc }}
+          <span class="post-short-desc">{{ collection.short-desc }}
         </div>
       </a>
-    {% endif %}
-  {% endfor %}
+  {% endif %}
 
-  {% for post in site.categories.events %}
-    {% assign eventDate = post.eventDate | date_to_long_string: "ordinal", "US" %}
-    {% if todays_date > eventDate %}
-    <p>There are no more upcoming events</p>
-      {% break %}
-    {% endif %}
-  {% endfor %}
+  {% if toggle != true %}
+  <p>There are no upcoming events</p>
+  {% break %}
+  {% endif %}
+  
+{% endfor %}
+
 
 
 
