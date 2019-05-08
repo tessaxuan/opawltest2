@@ -11,25 +11,13 @@
 <body background="{{ site.baseurl }}/assets/images/background.jpg" />
 
 {% include navigation.html %}
+  <div class="staff-image-author">
+    <img src="{{ site.baseurl }}/assets/images/staff/{{ page.image }}" />
+  </div>
   <h1>{{ page.name }}</h1>
   <div class="author-container">
     <span class="author-content">{{ content }}</span>
   </div>
-    <h2>News posted by {{ page.name }}</h2>
-  <div class="post-container">
-
-{% assign news = site.categories.news | where: 'author', page.short_name %}
-{% for post in news %}
-      <a href="{{ site.baseurl }}{{ post.url }}">
-        <div class="post-list">{{ post.title }} &mdash; {{ post.post-date }}<br>
-          <div class="post-break">
-            <HR>
-            </div>
-            <span class="post-short-desc">{{ post.short-desc }}</span>
-          </div>
-        </a>
-{% endfor %}
-    </div>
     {% include footer.html %}
 </body>
 </html>

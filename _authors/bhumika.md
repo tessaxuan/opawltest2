@@ -1,5 +1,4 @@
 ---
-layout: author
 short_name: bhumika
 name: Bhumika Patel
 image: bhumika-patel.jpg

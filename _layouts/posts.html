@@ -12,14 +12,11 @@
 
 {% include navigation.html %}
 
+{% capture postContent %}
 <div class="news-container">
   <h1>{{ page.title }}</h1>
   <p>
-    <em>{{ page.date | date_to_string }}
-    {% assign author = site.authors | where: 'short_name', page.author | first %}
-    {% if author %}
-      - <a href="{{ site.baseurl }}{{ author.url }}">{{ author.name }}</a>
-    {% endif %}</em>
+    <em>{{ page.date | date_to_long_string: "ordinal", "US" }} &mdash; {{ page.location }}</em>
     <hr class="post-break">
   </p>
 
@@ -30,3 +27,16 @@
 
 </body>
 </html>
+{% endcapture %}
+
+{% assign flyer = page.flyer-file-name %}
+{% if flyer != 'x' %}
+<div class="flyer-container">
+  <img src="{{ site.baseurl }}/assets/images/flyers/{{ page.flyer-file-name }}" alt="{{ page.flyer-desc }}" width="300px" height="500px" />
+</div>
+
+{{ postContent }}
+
+{% elsif flyer contains 'x' %}
+{{ postContent }}
+{% endif %}
