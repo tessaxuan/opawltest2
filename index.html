@@ -73,7 +73,7 @@ dots[slideIndex-1].className += " active";
   {% if date >= now %}
     {% assign toggle = true %}
 
-      <a href="{{ collection.url }}">
+      <a href="{{ site.baseurl }}{{ collection.url }}">
         <div class="events-list-home purple">{{ collection.title }} &mdash; {{ collection.date | date_to_long_string: "ordinal", "US" }}<br>
           <div class="post-break"><HR></div>
           <span class="post-short-desc">{{ collection.short-desc }}
@@ -85,7 +85,7 @@ dots[slideIndex-1].className += " active";
   <p>There are no upcoming events</p>
   {% break %}
   {% endif %}
-  
+
 {% endfor %}
 
 

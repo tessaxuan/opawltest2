@@ -21,6 +21,9 @@ collections:
     output: true
   events:
     output: true
+    permalink: /:collection/:name
+  events:
+    output: true
   news:
     output: true
 
@@ -29,28 +32,29 @@ defaults:
       path: ""
       type: "authors"
     values:
-      layout: "default"
+      layout: "author"
   - scope:
       path: ""
       type: "posts"
     values:
-      layout: "default"
+      layout: "posts"
   - scope:
       path: ""
       type: "events"
     values:
-      layout: "default"
+      layout: "posts"
   - scope:
       path: ""
       type: "news"
     values:
-      layout: "default"
+      layout: "posts"
   - scope:
       path: ""
     values:
       layout: "default"
 
 baseurl: /opawltest2
+future: true
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
