@@ -4,7 +4,7 @@ short_name: jona
 name: Jona Hilario
 image: jona-hilario.jpg
 ---
-Jona Hilario is a founding member of OPAWL. She serves as Vice-Chair and Community Committee Chair for Columbus. She is a Filipina immigrant who has lived in Columbus since 2004.
+Jona Hilario is a founding member of OPAWL. She serves as Vice-Chair of the Leadership Council and Community Building & Events Chair for Columbus. She is a Filipina immigrant who has lived in Columbus since 2004.
 
 Jona is passionate about issues of social justice and immigrant and refugee rights. She volunteers with refugee families in the Northside of Columbus. She also serves in leadership at All Nations Christian Fellowship, a multicultural church. She is on the board of Second Fiddle, a ministry that supports microfinance in Moldova.
 
